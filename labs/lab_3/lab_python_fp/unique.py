@@ -1,11 +1,11 @@
 # Итератор для удаления дубликатов
-from lab_python_fp.gen_random import gen_random
 class Unique(object):
     def __init__(self, items, **kwargs):
         self.data = set()
+        self.items=items
         self.iter_ind = 0
         self.ignore_case = kwargs.get('ignore_case', False)
-                # Нужно реализовать конструктор
+        # Нужно реализовать конструктор
         # В качестве ключевого аргумента, конструктор должен принимать
         # bool-параметр ignore_case,
         # в зависимости от значения которого будут считаться одинаковыми строки
@@ -15,23 +15,30 @@ class Unique(object):
         #           которых удалится
         # По-умолчанию ignore_case = False
 
-        pass 
-
     def __next__(self):
         current = None
         while True:
-            try:
-                current = next(self.data)
-            except TypeError:
-                if self.iter_ind >= len(self.data):
+            if isinstance(self.items, list):
+                if self.iter_ind >= len(self.items):
                     raise StopIteration
                 else:
-                    current = self.data[self.iter_ind]
+                    current = self.items[self.iter_ind]
                     self.iter_ind+=1
-            finally:
-                if self.ignore_case and current not in self.data: self.data.add(item)
-                elif not self.ignore_case and item.lower() not in set(map(str.lower,self.data)): self.data.add(item)
-
+                if self.ignore_case and current not in self.data: 
+                    self.data.add(current)
+                    return current
+                elif not self.ignore_case and current.lower() not in set(map(str.lower,self.data)): 
+                    self.data.add(current)
+                    return current
+            else:
+                current = next(self.items)
+                if self.ignore_case and current not in self.data: 
+                    self.data.add(current)
+                    return current
+                elif not self.ignore_case and current.lower() not in set(map(str.lower,self.data)): 
+                    self.data.add(current)
+                    return current
+               
 
     def __iter__(self):
         return self
@@ -39,6 +46,6 @@ class Unique(object):
 
 if __name__ == "__main__":
     b = ['a', 'A', 'b', 'B', 'a', 'A', 'b', 'B']
-    alist = ['Python', 'Java', 'C', 'C++', 'CSharp']
+    alist = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2]
     
-    print(Unique(gen_random(5,1,100), ignore_case=True).data)
+    for i in Unique(alist): print(i)

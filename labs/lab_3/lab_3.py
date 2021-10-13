@@ -22,9 +22,8 @@ with open(path,'r') as f:
 # В реализации функции f4 может быть до 3 строк
 @print_result
 def f1(arg):
-    #a=sorted(list(field(arg,'job-name')), key=str.lower)
-    #return (sorted(Unique(field(arg,'job-name')).data, key=str.lower))
-    return list(Unique(sorted(list(field(arg,'job-name')), key=str.lower)).data)
+    return list(Unique(sorted(list(field(arg,'job-name')), key=str.lower)))
+    #return list(Unique(field(arg,'job-name')))
 
 @print_result
 def f2(arg):
