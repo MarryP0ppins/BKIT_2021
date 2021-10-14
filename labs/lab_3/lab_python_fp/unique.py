@@ -1,10 +1,13 @@
 # Итератор для удаления дубликатов
+from lab_python_fp.cm_timer import cm_timer_1
+
 class Unique(object):
     def __init__(self, items, **kwargs):
         self.data = set()
-        self.items=items
+        self.items = items
         self.iter_ind = 0
         self.ignore_case = kwargs.get('ignore_case', False)
+        self.lower_set = set(map(str.lower,self.data))
         # Нужно реализовать конструктор
         # В качестве ключевого аргумента, конструктор должен принимать
         # bool-параметр ignore_case,
@@ -27,7 +30,7 @@ class Unique(object):
                 if self.ignore_case and current not in self.data: 
                     self.data.add(current)
                     return current
-                elif not self.ignore_case and current.lower() not in set(map(str.lower,self.data)): 
+                elif not self.ignore_case and current.lower() not in self.lower_set: 
                     self.data.add(current)
                     return current
             else:
@@ -35,7 +38,7 @@ class Unique(object):
                 if self.ignore_case and current not in self.data: 
                     self.data.add(current)
                     return current
-                elif not self.ignore_case and current.lower() not in set(map(str.lower,self.data)): 
+                elif not self.ignore_case and current.lower() not in self.lower_set: 
                     self.data.add(current)
                     return current
                

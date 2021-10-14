@@ -22,9 +22,9 @@ with open(path,'r') as f:
 # В реализации функции f4 может быть до 3 строк
 @print_result
 def f1(arg):
-    return list(Unique(sorted(list(field(arg,'job-name')), key=str.lower)))
+    return sorted(list(Unique(field(arg,"job-name"))), key=str.lower)
+    #return list(Unique(sorted(list(field(arg,'job-name')), key=str.lower)))
     #return list(Unique(field(arg,'job-name')))
-
 @print_result
 def f2(arg):
     return list(filter(lambda x: x.split()[0].lower() == "программист", arg))
