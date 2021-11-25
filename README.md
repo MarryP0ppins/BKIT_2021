@@ -40,7 +40,12 @@
     * [Шаблоны проектирования - реализация на различных языках.](https://refactoring.guru/ru/design-patterns/catalog)
     * [Шаблоны проектирования - реализация на C#.](https://metanit.com/sharp/patterns/1.1.php)
     * [Введение в модульное тестирование.](https://github.com/ugapanyuk/BKIT_2021/blob/main/pres/bkit_test.pdf)
+    * [Robotic Process Automation.](https://ru.wikipedia.org/wiki/Robotic_process_automation)
+    * [Статья. Внедрение зависимостей в Python.](https://webdevblog.ru/vnedrenie-zavisimostej-v-python/)
+    * [Статья. SOLID принципы.](https://webdevblog.ru/solid-principy-chast-1/)
 
+
+1. [Введение в разработку чат-ботов на платформе Telegram.](https://github.com/ugapanyuk/BKIT_2021/blob/master/pres/chatbot/bkit_telegram.pdf)
 
 
 ## Лабораторные работы:
@@ -48,9 +53,12 @@
 1. [Объектно-ориентированные возможности языка Python.](https://github.com/ugapanyuk/BKIT_2021/wiki/lab_python_oop) ( [Пример](/code/lab2_code) )
 1. [Функциональные возможности языка Python.](https://github.com/ugapanyuk/BKIT_2021/wiki/lab_python_fp)
 1. [Шаблоны проектирования и модульное тестирование в Python.](https://github.com/ugapanyuk/BKIT_2021/wiki/lab_python_test)
+1. [Разработка простого бота для Telegram с использованием языка Python.](https://github.com/ugapanyuk/BKIT_2021/wiki/lab_bot1)
+1. [Разработка бота на основе конечного автомата для Telegram с использованием языка Python.](https://github.com/ugapanyuk/BKIT_2021/wiki/lab_bot2)
 
 
 ## Домашнее задание:
+[Условия домашнего задания.](https://github.com/ugapanyuk/BKIT_2021/wiki/DZ)
 
 ## Рубежные контроли:
 
