@@ -3,7 +3,7 @@ import telebot
 from telebot import types
 
 # Токент бота
-TOKEN = '5077740843:AAF9iRRBJWMEf6MS-GWcOr0nATVjeFMTqvo'
+TOKEN = ''
 
 # Сообщения
 mes_cat = 'вывести котика'

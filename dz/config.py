@@ -1,7 +1,7 @@
 from enum import Enum
 
 # Токент бота
-TOKEN = "5056756185:AAFSbyjc0pwDz8W9WnvyXpsnJoH4LjIT47I"
+TOKEN = ""
 
 # Файл базы данных Vedis
 db_file = "db.vdb"
