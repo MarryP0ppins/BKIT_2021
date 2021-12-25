@@ -23,7 +23,7 @@ def field(items, *args):
         if len(args) > 1: yield out
 
 if __name__ == "__main__":
-    field()
-    #for i in field(goods, 'title', 'price'):print(i)
+    #field()
+    for i in field(goods,  'price'):print(i)
     #print(field(goods, 'title'))
     #print(field(goods, 'title', 'price', 'bag'))

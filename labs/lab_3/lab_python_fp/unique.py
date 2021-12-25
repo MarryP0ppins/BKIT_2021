@@ -1,47 +1,22 @@
 # Итератор для удаления дубликатов
-from lab_python_fp.cm_timer import cm_timer_1
-
 class Unique(object):
     def __init__(self, items, **kwargs):
         self.data = set()
-        self.items = items
-        self.iter_ind = 0
-        self.ignore_case = kwargs.get('ignore_case', False)
-        self.lower_set = set(map(str.lower,self.data))
-        # Нужно реализовать конструктор
-        # В качестве ключевого аргумента, конструктор должен принимать
-        # bool-параметр ignore_case,
-        # в зависимости от значения которого будут считаться одинаковыми строки
-        # в разном регистре
-        # Например: ignore_case = True, Aбв и АБВ - разные строки
-        #           ignore_case = False, Aбв и АБВ - одинаковые строки, одна из
-        #           которых удалится
-        # По-умолчанию ignore_case = False
+        self.iter = iter(items)
+        self.ignore_case = kwargs.get('ignore_case', True)
+        self.lower_set = set()
 
     def __next__(self):
         current = None
         while True:
-            if isinstance(self.items, list):
-                if self.iter_ind >= len(self.items):
-                    raise StopIteration
-                else:
-                    current = self.items[self.iter_ind]
-                    self.iter_ind+=1
-                if self.ignore_case and current not in self.data: 
-                    self.data.add(current)
-                    return current
-                elif not self.ignore_case and current.lower() not in self.lower_set: 
-                    self.data.add(current)
-                    return current
-            else:
-                current = next(self.items)
-                if self.ignore_case and current not in self.data: 
-                    self.data.add(current)
-                    return current
-                elif not self.ignore_case and current.lower() not in self.lower_set: 
-                    self.data.add(current)
-                    return current
-               
+            current = str(next(self.iter))
+            if not self.ignore_case and current not in self.data: 
+                self.data.add(current)
+                return current
+            elif self.ignore_case and current.lower() not in self.lower_set: 
+                self.data.add(current)
+                self.lower_set.add(current.lower())
+                return current
 
     def __iter__(self):
         return self
@@ -51,4 +26,6 @@ if __name__ == "__main__":
     b = ['a', 'A', 'b', 'B', 'a', 'A', 'b', 'B']
     alist = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2]
     
-    for i in Unique(alist): print(i)
+    for i in Unique(b): print(i)
+    print()
+    for i in Unique(b, ignore_case=False): print(i)

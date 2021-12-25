@@ -8,7 +8,7 @@ from lab_python_fp.print_result import print_result
 from lab_python_fp.cm_timer import cm_timer_1
 
 # Сделаем другие необходимые импорты
-path = "C:\\Users\\nagor\\Documents\\python\\lab_3\\data_light.json"
+path = r"C:\Users\nagor\Documents\python\lab_3\data_light.json"
 
 
 # Необходимо в переменную path сохранить путь к файлу, который был передан при
@@ -39,7 +39,6 @@ def f3(arg):
 def f4(arg):
     out = list(zip(arg, list(gen_random(len(arg),100000,200000))))
     return list(map(lambda x: x[0] + ", зарплата " + str(x[1]) + " руб.",out))
-
 
 if __name__ == '__main__':
     with cm_timer_1():
